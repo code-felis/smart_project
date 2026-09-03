@@ -1,0 +1,14 @@
+[Unit]
+Description=My Custom Script
+After=network.target
+Conflicts=shutdown_experiment.service
+
+[Service]
+ExecStart=/home/smart/start_gpsd.sh
+Restart=always
+RestartSec=5
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,12 @@
+[Unit]
+Description=Shutdown USB port. After 5 seconds restore power.
+After=network.target
+Conflicts=shutdown_experiment.service
+
+[Service]
+ExecStart=/home/smart/restart-sdr-usb.sh
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target
